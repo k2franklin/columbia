@@ -97,6 +97,7 @@ export default async function decorate(block) {
 
   if (resp.ok) {
     const html = await resp.text();
+    console.log(html);
 
     // decorate nav DOM
     const nav = document.createElement('nav');
@@ -135,7 +136,6 @@ export default async function decorate(block) {
     // prevent mobile nav behavior on window resize
     toggleMenu(nav, navSections, isDesktop.matches);
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
-
     decorateIcons(nav);
     const navWrapper = document.createElement('div');
     navWrapper.className = 'nav-wrapper';

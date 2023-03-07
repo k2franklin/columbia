@@ -1,9 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  background-color: rgb(51,51,51);
   width: 100%;
   z-index: 2;
   position: fixed;
+  color: #fff;
 }
 
 header nav {
@@ -17,7 +18,7 @@ header nav {
   margin: auto;
   max-width: 1264px;
   height: var(--nav-height);
-  padding: 0 1rem;
+  padding: 0;
   font-family: var(--body-font-family);
 }
 
@@ -32,7 +33,7 @@ header nav[aria-expanded=true] {
 
 @media (min-width: 600px) {
   header nav {
-    padding: 0 2rem;
+    padding: 0;
   }
 }
 
@@ -145,11 +146,17 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  background-color: #007ab8;
+  height: 100%;
+  padding: 0 2rem;
 }
 
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
+header nav .nav-brand p {
+  height: 100%;
+}
+
+header nav .nav-brand span {
+  height: 100%;
 }
 
 /* sections */
@@ -199,7 +206,7 @@ header nav .nav-sections ul > li > ul > li {
 
   header nav .nav-sections .nav-drop {
     position: relative;
-    padding-right: 16px;
+    padding-right: 0;
     cursor: pointer;
   }
 
@@ -247,7 +254,7 @@ header nav .nav-sections ul > li > ul > li {
     left: -1em;
     width: 200px;
     margin-top: 12px;
-    padding: 1em;
+    padding: 0;
     background-color: var(--highlight-background-color);
     white-space: initial;
   }
@@ -265,11 +272,18 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections > ul > li > ul > li {
-    padding: 8px 0;
+    padding: 0;
   }
 }
 
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+}
+span.icon-logo{
+  width: 9.0625rem;
+  height: 1.75rem;
+}
+span.icon-logo svg{
+  fill: #fff;
 }
