@@ -124,6 +124,34 @@ export default async function decorate(block) {
       });
     }
 
+    const navTools = nav.querySelector('.nav-tools');
+    if(navTools){
+      const searchForm = document.createElement('form');
+      searchForm.action = "/search";
+      searchForm.method = "get";
+      searchForm.name = "simpleSearch";
+
+      const searchInput = document.createElement('input');
+      searchInput.className = "search-input";
+      searchInput.name = "q";
+      searchInput.type = "search";
+      searchInput.placeholder = "Search";
+      searchInput.required = "required"
+      searchForm.appendChild(searchInput);
+
+      const searchButton = document.createElement('button');
+      searchButton.className = "search-button";
+      searchForm.appendChild(searchButton);
+      const searchWrapper = document.createElement('div');
+      searchWrapper.className = "search-form";
+      searchWrapper.appendChild(searchForm);
+      const icon_search = navTools.querySelector('.icon-search');
+      if(icon_search){
+        searchButton.appendChild(icon_search);
+      }
+      navTools.insertBefore(searchWrapper, navTools.firstChild);
+    }
+
     // hamburger for mobile
     const hamburger = document.createElement('div');
     hamburger.classList.add('nav-hamburger');

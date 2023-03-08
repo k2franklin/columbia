@@ -153,6 +153,7 @@ export async function decorateIcons(element) {
         // Styled icons don't play nice with the sprite approach because of shadow dom isolation
         const svg = await response.text();
         if (svg.match(/(<style | class=)/)) {
+          debugger
           ICONS_CACHE[iconName] = { styled: true, html: svg };
         } else {
           ICONS_CACHE[iconName] = {
@@ -181,7 +182,7 @@ export async function decorateIcons(element) {
     if (ICONS_CACHE[iconName].styled) {
       parent.innerHTML = ICONS_CACHE[iconName].html;
     } else {
-      parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#${iconName}"/></svg>`;
+      parent.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"><use href="#icons-sprite-${iconName}"/></svg>`;
     }
   });
 }
