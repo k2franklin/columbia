@@ -163,7 +163,7 @@ a.button.secondary, button.secondary {
   color: var(--text-color)
 } 
 
-main input {
+/* main input {
   font-size: 1.25rem;
   width: 100%;
   max-width: 50rem;
@@ -175,10 +175,14 @@ main input {
   border: 1px solid var(--text-color);
   color: var(--text-color);
   background-color: var(--background-color);
-}
+}233
 
 main input:hover {
   border: 1px solid var(--text-color);
+} */
+
+main input {
+  color: transparent;
 }
 
 main blockquote {
