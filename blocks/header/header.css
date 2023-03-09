@@ -335,16 +335,25 @@ header .nav-wrapper #globalbanner {
 }
 
 header .nav-wrapper #globalbanner .nav-bannertools {
+  height:100%;
   display: inline-flex;
   justify-content: space-between;
-  gap: 1rem;
+  align-self: stretch;
 }
+
+header .nav-wrapper #globalbanner .nav-bannertools .icon {
+  padding: 0.625rem;
+}
+
+header .nav-wrapper #globalbanner .nav-bannertools .icon:hover {
+  background-color:rgb(51,51,51);
+}
+
 header .nav-wrapper #globalbanner .nav-bannertools .icon svg{
   fill: rgb(51,51,51);
 }
 
 header .nav-wrapper #globalbanner .nav-bannertools .icon:hover svg{
   fill: #fff;
-  background-color:rgb(51,51,51);
   cursor: pointer;
 }
