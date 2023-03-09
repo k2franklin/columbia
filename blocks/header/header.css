@@ -284,7 +284,7 @@ span.icon-logo{
   height: 1.75rem;
 }
 
-header nav span.icon svg{
+header nav#nav span.icon svg{
   fill: #fff;
 }
 
@@ -321,4 +321,30 @@ header nav .nav-tools .search-button{
   margin: 0;
   padding:  0.375rem 0.5rem;
   appearance: button;
+}
+
+header .nav-wrapper #globalbanner {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  font-size: 1rem;
+  padding: 0 2rem;
+  background-color: #fff;
+  color: black;
+  height: 2.75rem;
+}
+
+header .nav-wrapper #globalbanner .nav-bannertools {
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+header .nav-wrapper #globalbanner .nav-bannertools .icon svg{
+  fill: rgb(51,51,51);
+}
+
+header .nav-wrapper #globalbanner .nav-bannertools .icon:hover svg{
+  fill: #fff;
+  background-color:rgb(51,51,51);
+  cursor: pointer;
 }

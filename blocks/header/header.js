@@ -95,6 +95,31 @@ export default async function decorate(block) {
   const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
   const resp = await fetch(`${navPath}.plain.html`);
 
+  const navWrapper = document.createElement('div');
+  navWrapper.className = 'nav-wrapper';
+  block.append(navWrapper);
+
+  const globalBannerPath =  '/globalbanner';
+  const globalBannerResp = await fetch(`${globalBannerPath}.plain.html`);
+
+  if (globalBannerResp.ok) {
+    const html = await globalBannerResp.text();
+    console.log(html);
+
+    // decorate nav DOM
+    const banner = document.createElement('nav');
+    banner.id = 'globalbanner';
+    banner.innerHTML = html;
+
+    const classes = ['banneroffer', 'bannertools'];
+    classes.forEach((c, i) => {
+      const section = banner.children[i];
+      if (section) section.classList.add(`nav-${c}`);
+    });
+    decorateIcons(banner);
+    navWrapper.append(banner);
+  }
+
   if (resp.ok) {
     const html = await resp.text();
     console.log(html);
@@ -109,7 +134,6 @@ export default async function decorate(block) {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
     });
-
     const navSections = nav.querySelector('.nav-sections');
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
@@ -165,9 +189,6 @@ export default async function decorate(block) {
     toggleMenu(nav, navSections, isDesktop.matches);
     isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
     decorateIcons(nav);
-    const navWrapper = document.createElement('div');
-    navWrapper.className = 'nav-wrapper';
     navWrapper.append(nav);
-    block.append(navWrapper);
   }
 }
