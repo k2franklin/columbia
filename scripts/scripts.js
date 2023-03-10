@@ -10,7 +10,7 @@ import {
   decorateTemplateAndTheme,
   waitForLCP,
   loadBlocks,
-  loadCSS,
+  loadCSS
 } from './lib-franklin.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -38,9 +38,22 @@ function buildHeroBlock(main) {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildOfferBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
+  }
+}
+
+function buildOfferBlock(main) {
+  try {
+    // eslint-disable-next-line no-bitwise
+    const section = document.createElement('div');
+    section.append(buildBlock('offer',''));
+    main.prepend(section);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Failed add Offer block to the page', error);
   }
 }
 
