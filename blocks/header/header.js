@@ -104,7 +104,6 @@ export default async function decorate(block) {
 
   if (globalBannerResp.ok) {
     const html = await globalBannerResp.text();
-    console.log(html);
 
     // decorate nav DOM
     const banner = document.createElement('nav');
@@ -122,7 +121,6 @@ export default async function decorate(block) {
 
   if (resp.ok) {
     const html = await resp.text();
-    console.log(html);
 
     // decorate nav DOM
     const nav = document.createElement('nav');

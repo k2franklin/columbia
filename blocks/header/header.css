@@ -331,7 +331,7 @@ header .nav-wrapper #globalbanner {
   padding: 0 2rem;
   background-color: #fff;
   color: black;
-  height: 2.75rem;
+  height: var(--banner-height);
 }
 
 header .nav-wrapper #globalbanner .nav-bannertools {

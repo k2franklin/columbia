@@ -39,6 +39,7 @@
 
   /* nav height */
   --nav-height: 5.625rem;
+  --banner-height: 2.75rem;
 
 }
 
@@ -52,7 +53,6 @@
     --heading-font-size-xs: 22px;  
   }
 }
-
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
@@ -63,7 +63,7 @@ body {
 }
 
 header {
-  height: var(--nav-height);
+  height: calc(var(--nav-height) + var(--banner-height));
 }
 
 h1, h2, h3,

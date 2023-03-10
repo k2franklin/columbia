@@ -378,6 +378,7 @@ export function buildBlock(blockName, content) {
     });
     blockEl.appendChild(rowEl);
   });
+  console.log(blockEl.innerHTML);
   return (blockEl);
 }
 
